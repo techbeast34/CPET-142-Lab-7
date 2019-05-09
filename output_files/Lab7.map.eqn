@@ -1,0 +1,81 @@
+-- Copyright (C) 2018  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Intel Program License 
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details.
+--a is a
+a = OUTPUT(inst5);
+
+
+--b is b
+b = OUTPUT(inst6);
+
+
+--c is c
+c = OUTPUT(inst7);
+
+
+--d is d
+d = OUTPUT(A1L12);
+
+
+--e is e
+e = OUTPUT(inst10);
+
+
+--f is f
+f = OUTPUT(inst7);
+
+
+--g is g
+g = OUTPUT(A1L14);
+
+
+--X is X
+X = INPUT();
+
+
+--Y is Y
+Y = INPUT();
+
+
+--Z is Z
+Z = INPUT();
+
+
+--inst5 is inst5
+inst5 = (!X & (Y & !Z)) # (X & (!Y));
+
+
+--inst6 is inst6
+inst6 = (!Y & ((Z))) # (Y & (!X & !Z));
+
+
+--inst7 is inst7
+inst7 = (!X & (Y & !Z)) # (X & (!Y & Z));
+
+
+--A1L11 is inst8~0
+A1L11 = (!X & ((!Y) # (Z)));
+
+
+--inst10 is inst10
+inst10 = (!Y $ (!Z)) # (X);
+
+
+--A1L14 is inst10~_wirecell
+A1L14 = !inst10;
+
+
+--A1L12 is inst8~0_wirecell
+A1L12 = !A1L11;
+
+

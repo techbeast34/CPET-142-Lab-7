@@ -1,0 +1,114 @@
+-- Copyright (C) 2018  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Intel Program License 
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details.
+--inst5 is inst5 at MLABCELL_X49_Y1_N30
+inst5 = ( !A1L24 & ( A1L22 ) ) # ( A1L24 & ( !A1L22 & ( !A1L26 ) ) );
+
+
+--inst6 is inst6 at MLABCELL_X49_Y1_N39
+inst6 = ( !A1L24 & ( A1L22 & ( A1L26 ) ) ) # ( A1L24 & ( !A1L22 & ( !A1L26 ) ) ) # ( !A1L24 & ( !A1L22 & ( A1L26 ) ) );
+
+
+--inst7 is inst7 at MLABCELL_X49_Y1_N42
+inst7 = ( !A1L24 & ( A1L22 & ( A1L26 ) ) ) # ( A1L24 & ( !A1L22 & ( !A1L26 ) ) );
+
+
+--A1L19 is inst8~0 at MLABCELL_X49_Y1_N51
+A1L19 = ( A1L24 & ( !A1L22 & ( A1L26 ) ) ) # ( !A1L24 & ( !A1L22 ) );
+
+
+--inst10 is inst10 at MLABCELL_X49_Y1_N24
+inst10 = ( A1L24 & ( A1L22 ) ) # ( !A1L24 & ( A1L22 ) ) # ( A1L24 & ( !A1L22 & ( !A1L26 ) ) ) # ( !A1L24 & ( !A1L22 & ( A1L26 ) ) );
+
+
+--A1L3 is a~output at IOOBUF_X52_Y0_N53
+A1L3 = OUTPUT_BUFFER.O(.I(inst5), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--a is a at PIN_U21
+a = OUTPUT();
+
+
+--A1L5 is b~output at IOOBUF_X51_Y0_N36
+A1L5 = OUTPUT_BUFFER.O(.I(inst6), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--b is b at PIN_V21
+b = OUTPUT();
+
+
+--A1L7 is c~output at IOOBUF_X48_Y0_N76
+A1L7 = OUTPUT_BUFFER.O(.I(inst7), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--c is c at PIN_W22
+c = OUTPUT();
+
+
+--A1L9 is d~output at IOOBUF_X50_Y0_N36
+A1L9 = OUTPUT_BUFFER.O(.I(!A1L19), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--d is d at PIN_W21
+d = OUTPUT();
+
+
+--A1L11 is e~output at IOOBUF_X48_Y0_N93
+A1L11 = OUTPUT_BUFFER.O(.I(inst10), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--e is e at PIN_Y22
+e = OUTPUT();
+
+
+--A1L13 is f~output at IOOBUF_X50_Y0_N53
+A1L13 = OUTPUT_BUFFER.O(.I(inst7), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--f is f at PIN_Y21
+f = OUTPUT();
+
+
+--A1L15 is g~output at IOOBUF_X46_Y0_N36
+A1L15 = OUTPUT_BUFFER.O(.I(!inst10), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--g is g at PIN_AA22
+g = OUTPUT();
+
+
+--A1L22 is X~input at IOIBUF_X34_Y0_N1
+A1L22 = INPUT_BUFFER(.I(X), );
+
+
+--X is X at PIN_T13
+X = INPUT();
+
+
+--A1L24 is Y~input at IOIBUF_X33_Y0_N58
+A1L24 = INPUT_BUFFER(.I(Y), );
+
+
+--Y is Y at PIN_V13
+Y = INPUT();
+
+
+--A1L26 is Z~input at IOIBUF_X33_Y0_N41
+A1L26 = INPUT_BUFFER(.I(Z), );
+
+
+--Z is Z at PIN_U13
+Z = INPUT();
+
+
+
